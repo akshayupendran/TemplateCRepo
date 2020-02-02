@@ -1,0 +1,182 @@
+################################################################################
+# \file astyle.options
+# \author Akshay Krishna Upendran
+# \brief
+# Custom options file for astyle (astyle.sourceforge.net), a source code
+# formatter for C/C++ (and some other languages).
+#
+# usage:
+# cd src
+# astyle --options="../astyle.options" "./*"
+#
+# Some documentation of the options is provided here for convenience. For full
+# options documentation, go to astyle.sourceforge.net/astyle.html.
+################################################################################
+
+
+######################
+# Brace Style Options
+######################
+# This is the _bracket_ style (not affecting indentation, for example.)
+--style=bsd
+
+######################
+# Tab Options
+######################
+# Just to be clear (even though it's the default): indentation uses 4 spaces.
+--indent=spaces=4
+
+######################
+# Brace Modify Options
+######################
+# Do not Attach braces to a namespace statement.
+# --attach-namespaces
+# Do not Attach braces to a class statement.
+# --attach-classes
+# Do not Attach braces to class and struct inline function definitions.
+# --attach-inlines
+# Attach braces to a braced extern "C" statement.
+--attach-extern-c
+# Attach the closing 'while' of a 'do-while' statement to the closing brace.
+--attach-closing-while
+
+######################
+# Indentation Options
+######################
+# Indent 'class' and 'struct' blocks so that the entire block is indented.
+--indent-classes
+# Indent 'class ' and 'struct' access modifiers, 'public:', 'protected:' and
+# 'private:', one half indent. The rest of the class is not indented.
+# If used with indent‑classes this option will be ignored.
+# --indent-modifiers
+# Indent 'switch' blocks so that the 'case X:' statements are indented
+# in the switch block.
+--indent-switches
+# Do not Indent 'case X:' blocks from the 'case X:' headers.
+# --indent-cases
+# Add extra indentation to namespace blocks.
+--indent-namespaces
+# Indent, instead of align, continuation lines following lines that contain
+# an opening paren '(' or an assignment '='.
+--indent-after-parens
+# Set the continuation indent for a line that ends with an opening paren '('
+# or an assignment '='.
+--indent-continuation=1
+# Add extra indentation to labels so they appear 1 indent less than the current
+# indentation, rather than being flushed to the left (the default).
+--indent-labels
+# Indent preprocessor blocks at brace level zero and immediately
+# within a namespace.
+--indent-preproc-block
+# Indent multi-line preprocessor definitions ending with a backslash.
+--indent-preproc-define
+# Do not Indent preprocessor conditional statements to the same level as the
+# source code.
+# --indent-preproc-cond
+# Indent C++ comments beginning in column one.
+--indent-col1-comments
+# Set the minimal indent that is added when a header is built of multiple lines.
+--min-conditional-indent=0
+# Set the  maximum of # spaces to indent a continuation line.
+--max-continuation-indent=80
+
+######################
+# Paddng Options
+######################
+# Pad empty lines around header blocks (e.g. 'if', 'for', 'while'...).
+--break-blocks
+# Do not Pad empty lines around even else header / sub header blocks.
+# --break-blocks=all
+# Insert space padding around operators.
+--pad-oper
+# Insert space padding after commas.
+--pad-comma
+# Do not Insert space padding around parens on both the outside and the inside.
+# --pad-parens
+# Do not Insert space padding around parens on the outside only.
+# --pad-paren-out
+# Do not Insert space padding around the first paren in a series on the outside
+# only.
+# --pad-first-paren-out
+# Do Not Insert space padding around paren on the inside only.
+# --pad-paren-in
+# Do not Insert space padding between a header (e.g. 'if', 'for', 'while'...)
+# and the following paren.
+--pad-header
+# Remove extra space padding around parens on the inside and outside.
+# --unpad-paren
+# Do not delete empty lines within a function or method.
+# --delete-empty-lines
+# Do not Fill empty lines with the white space of the previous line.
+# --fill-empty-lines
+# Attach a pointer or reference operator (*, &, or ^) to the variable type.
+--align-pointer=type
+# This option will align references separate from pointers.
+--align-reference=name
+
+######################
+#Formatting Options
+######################
+# When used with --style=java, --style=kr, --style=stroustrup, --style=linux, or
+# --style=1tbs, this breaks closing headers (e.g. 'else', 'catch', ...) from
+# their immediately preceding closing braces.
+# --break-closing-braces
+# Do not Break "else if" header combinations into separate lines.
+# --break-elseifs
+# Break one line headers (e.g. 'if', 'while', 'else', ...) from a statement
+# residing on the same line.
+--break-one-line-headers
+# Add braces to unbraced one line cond statements (e.g. 'if', 'for', ...).
+--add-braces
+# Do not Addbraces one line braces to unbraced one line conditional statements
+# (e.g. 'if', 'for', 'while'...).
+# --add-one-line-braces
+# Do not Remove braces from conditional statements (e.g. 'if', 'for'...).
+# --remove-braces
+# Do not Break the return type from the function definitions.
+# --break-return-type
+# Do not Break the return type from the function declarations.
+# --break-return-type-decl
+# Attach the return type to the function definitions.
+--attach-return-type
+# Attach the return type to the function declarations.
+--attach-return-type-decl
+# Break one-line blocks.
+# --keep-one-line-blocks
+# Break complex statements and multiple statements residing on a single line.
+# --keep-one-line-statements
+# Converts tabs into spaces in the non-indentation part of the line.
+--convert-tabs
+# Closes whitespace between the ending angle brackets of template definitions.
+--close-templates
+# Don't Remove the preceding '*' in a multi-line comment that begins a line.
+# --remove-comment-prefix
+# The option max‑code‑length will break a line if the code exceeds # characters.
+--max-code-length=80
+# Let the formatter read the extensions and deduce the type of File
+# --mode=c
+
+######################
+# Other Options
+######################
+# Do not create a backup of the file with the given extension.
+--suffix=none
+# Recursively search all subfolder if the input is a File
+--recursive
+# The run is not a trial run.
+# --dry-run
+# Excludes will come from the batch
+# --exclude
+# Do not run if there are exclude errors.
+# --ignore-exclude-errors
+# Print errors to standard-output rather than to standard-error.
+--errors-to-stdout
+# Preserve the original file's date and time modified.
+--preserve-date
+# Verbose display mode. Display optional information, such as release number,
+# date, option file locations, and statistical data.
+--verbose
+# Formatted files display mode. Display only the files that have been formatted.
+--formatted
+# The lineendings can either be windows or linux or macold
+--lineend=linux
