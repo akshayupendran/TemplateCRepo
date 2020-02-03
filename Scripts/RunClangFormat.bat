@@ -4,6 +4,7 @@ SETLOCAL
 SET REPO_LOCATION=/home/docker/projects/TemplateCRepo
 SET IMAGE_NAME=template_repo/alpine:1.0
 docker run --rm -v %REPO_LOCATION%:/projects %IMAGE_NAME% /usr/bin/clang-format -i --verbose "/projects/src/main.c"|| GOTO FAILURE
+REM docker run --rm -v /home/docker/projects/TemplateCRepo:/projects template_repo/alpine:1.0 /usr/bin/clang-format -i --verbose "/projects/src/*.c"
 :SUCCESS
 ENDLOCAL
 EXIT /B 0
