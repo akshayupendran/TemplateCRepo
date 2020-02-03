@@ -7,7 +7,7 @@
 #
 # usage:
 # cd src
-# astyle --options="../astyle.options" "./*"
+# astyle --options="../astyle.options" "./*.c"
 #
 # Some documentation of the options is provided here for convenience. For full
 # options documentation, go to astyle.sourceforge.net/astyle.html.
